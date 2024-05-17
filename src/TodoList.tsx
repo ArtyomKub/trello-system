@@ -1,11 +1,11 @@
 import React from 'react';
 
-type TodoListProps = {
+type TodoListPropsType = {
     title: string;
 }
 
 
-export const TodoList = (props:TodoListProps) => {
+export const TodoList: React.FC<TodoListPropsType> = (props) => {
     return (
         <div className="todolist">
             <h3>{props.title}</h3>
