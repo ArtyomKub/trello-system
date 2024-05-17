@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+    Hi! In this pet-project I will be create personal system - analog TRELLO.
+What is Trello? Trello this is a web-based, Kanban-style, list-making application that organizes your projects into boards. 
+
+This is a collaboration tool that tells you what's being worked on, who's working on what, and where something is in a process
+
+    Trello works for any type of project, workflow, or team, and it can move as fast as you do3
+
+    Trello is a subsidiary of Atlassian1.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
