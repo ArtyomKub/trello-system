@@ -6,6 +6,7 @@ import {TaskType, TodoList} from './TodoList';
 function App() {
 
     const todoListTitle_1 = 'What to learn'
+    // const todoListTitle_1 = 'What to learn'
     const todoListTitle_2 = 'What to buy'
     const tasks_1: Array<TaskType> = [
         {id: 1, isDone: true, title: 'HTML&CSS'},
