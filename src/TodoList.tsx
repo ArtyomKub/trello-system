@@ -1,9 +1,11 @@
 import React, {ReactElement} from 'react';
+import {FilterValueType} from './App';
 
 type TodoListPropsType = {
     title: string;
     tasks: Array<TaskType>
     removeTask: (taskId: number) => void;
+    changeFilter: (nextFilterValue: FilterValueType) => void
 }
 
 export type TaskType = {
@@ -11,7 +13,7 @@ export type TaskType = {
     isDone: boolean
     title: string
 }
-export const TodoList: React.FC<TodoListPropsType> = ({title, tasks, removeTask}) => {
+export const TodoList: React.FC<TodoListPropsType> = ({title, tasks, removeTask, changeFilter}) => {
 
     // let tasksList: Array<JSX.Element> | JSX.Element;
     // if (tasks.length === 0) {
@@ -51,6 +53,13 @@ export const TodoList: React.FC<TodoListPropsType> = ({title, tasks, removeTask}
         ? <ul>{listItem}</ul>
         : <span>Your Tasks is Empty</span>
 
+    const onClickFilterHandler = (nextFilterValue:FilterValueType) => {
+      return (
+          changeFilter(nextFilterValue)
+      )
+    }
+
+
     return (
         <div className="todolist">
             <h3>{title}</h3>
@@ -69,9 +78,9 @@ export const TodoList: React.FC<TodoListPropsType> = ({title, tasks, removeTask}
             {/*    ))}*/}
             {/*</ul>*/}
             <div>
-                <button>All</button>
-                <button>Active</button>
-                <button>Completed</button>
+                <button onClick={()=>onClickFilterHandler('all')}>All</button>
+                <button onClick={()=>onClickFilterHandler('active')}>Active</button>
+                <button onClick={()=>onClickFilterHandler('active')}>Completed</button>
             </div>
         </div>
     );
