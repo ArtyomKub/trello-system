@@ -7,9 +7,9 @@ type FilterValueType = 'all' | 'active' | 'completed'
 
 function App() {
 
-    const todoListTitle = 'What to learn'
+    const todoListTitle:string = 'What to learn'
 
-    const [tasks, setTasks] = useState([
+    const [tasks, setTasks] = useState<Array<TaskType>>([
         {id: 1, isDone: true, title: 'HTML&CSS'},
         {id: 2, isDone: false, title: 'JS'},
         {id: 3, isDone: true, title: 'REACT'},
@@ -27,18 +27,32 @@ function App() {
     }
 
     const [filter, setFilter] = useState<FilterValueType>('all')
-    const getFilteredTasksForRender=(allTasks:Array<TaskType>, filterValue: FilterValueType)=>{
+    const getFilteredTasksForRender = (allTasks: Array<TaskType>, filterValue: FilterValueType): Array<TaskType> => {
+       if (filterValue==='active') {
+           return allTasks.filter(t => !t.isDone)
+       } else if (filterValue=== 'completed') {
+           return allTasks.filter(t => t.isDone)
+       } else {
+           return allTasks
+       }
 
+        // switch (filterValue) {
+        //     case 'active':
+        //         return allTasks.filter(t => !t.isDone)
+        //     case 'completed':
+        //         return allTasks.filter(t => t.isDone)
+        //     default:
+        //         return allTasks
+        // }
     }
 
-    const filteredTaskForRender:Array<TaskType> = getFilteredTasksForRender()
-
+    const filteredTaskForRender: Array<TaskType> = getFilteredTasksForRender(tasks, filter)
 
     return (
         <div className="App">
             <TodoList
                 title={todoListTitle}
-                tasks={tasks}
+                tasks={filteredTaskForRender}
                 removeTask={removeTask}
             />
         </div>
