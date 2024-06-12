@@ -28,22 +28,18 @@ function App() {
 
     const [filter, setFilter] = useState<FilterValueType>('all')
     const getFilteredTasksForRender = (allTasks: Array<TaskType>, filterValue: FilterValueType): Array<TaskType> => {
-       if (filterValue==='active') {
-           return allTasks.filter(t => !t.isDone)
-       } else if (filterValue=== 'completed') {
-           return allTasks.filter(t => t.isDone)
-       } else {
-           return allTasks
-       }
+        switch (filterValue) {
+            case 'active':
+                return allTasks.filter(t => !t.isDone)
+            case 'completed':
+                return allTasks.filter(t => t.isDone)
+            default:
+                return allTasks
+        }
+    }
 
-        // switch (filterValue) {
-        //     case 'active':
-        //         return allTasks.filter(t => !t.isDone)
-        //     case 'completed':
-        //         return allTasks.filter(t => t.isDone)
-        //     default:
-        //         return allTasks
-        // }
+    const changeFilter = (nextFilterValue:FilterValueType)=> {
+        setFilter(nextFilterValue)
     }
 
     const filteredTaskForRender: Array<TaskType> = getFilteredTasksForRender(tasks, filter)
