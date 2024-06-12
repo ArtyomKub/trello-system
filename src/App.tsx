@@ -3,7 +3,7 @@ import './App.css';
 import {TaskType, TodoList} from './TodoList';
 
 
-type FilterType = 'all' | 'active' | 'completed'
+type FilterValueType = 'all' | 'active' | 'completed'
 
 function App() {
 
@@ -26,8 +26,10 @@ function App() {
         setTasks(newTask)
     }
 
-    const [filter, setFilter] = useState<FilterType>('all')
+    const [filter, setFilter] = useState<FilterValueType>('all')
+    const getFilteredTasksForRender=(allTasks:Array<TaskType>, filterValue: FilterValueType)=>{
 
+    }
 
     const filteredTaskForRender:Array<TaskType> = getFilteredTasksForRender()
 
