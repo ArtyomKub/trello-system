@@ -1,17 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {TaskType, TodoList} from './TodoList';
+import {TodoList} from './TodoList';
 
 
 function App() {
 
     const todoListTitle = 'What to learn'
-    const tasks: Array<TaskType> = [
+
+    const [tasks, setTasks] = useState([
         {id: 1, isDone: true, title: 'HTML&CSS'},
         {id: 2, isDone: false, title: 'JS'},
         {id: 3, isDone: true, title: 'REACT'},
         {id: 4, isDone: false, title: 'CSS'},
-    ]
+    ])
 
 
     return (
