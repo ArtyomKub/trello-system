@@ -80,7 +80,7 @@ export const TodoList: React.FC<TodoListPropsType> = ({title, tasks, removeTask,
             <div>
                 <button onClick={()=>onClickFilterHandler('all')}>All</button>
                 <button onClick={()=>onClickFilterHandler('active')}>Active</button>
-                <button onClick={()=>onClickFilterHandler('active')}>Completed</button>
+                <button onClick={()=>onClickFilterHandler('completed')}>Completed</button>
             </div>
         </div>
     );
