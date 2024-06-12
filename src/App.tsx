@@ -29,6 +29,9 @@ function App() {
     const [filter, setFilter] = useState<FilterType>('all')
 
 
+    const filteredTaskForRender:Array<TaskType> = getFilteredTasksForRender()
+
+
     return (
         <div className="App">
             <TodoList
