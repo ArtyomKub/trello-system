@@ -12,21 +12,35 @@ export type TaskType = {
 }
 export const TodoList: React.FC<TodoListPropsType> = ({title, tasks}) => {
 
-    let tasksList: Array<JSX.Element> | JSX.Element;
-    if (tasks.length === 0) {
-        tasksList = <span>Your TasksList is empty</span>
-    } else {
-        const listItems:Array<JSX.Element>=[]
-        for (let i=0; i<tasks.length; i++) {
-            const newListItems = <li>
-                <input type="checkbox" checked={tasks[i].isDone}/>
-                <span>{tasks[i].title}</span>
-                <button>x</button>
+    // let tasksList: Array<JSX.Element> | JSX.Element;
+    // if (tasks.length === 0) {
+    //     tasksList = <span>Your TasksList is empty</span>
+    // } else {
+    //     const listItems:Array<JSX.Element>=[]
+    //     for (let i=0; i<tasks.length; i++) {
+    //         const newListItems = <li>
+    //             <input type="checkbox" checked={tasks[i].isDone}/>
+    //             <span>{tasks[i].title}</span>
+    //             <button>x</button>
+    //         </li>
+    //         listItems.push(newListItems)
+    //     }
+    //     tasksList=<ul>{listItems}</ul>
+    // }
+
+    const listItem: Array<JSX.Element> = tasks.map(t => {
+        return (
+            <li key={t.id}>
+                <input type="checkbox" checked={t.isDone}/>
+                <span>{t.title}</span>
+                <button>X</button>
             </li>
-            listItems.push(newListItems)
-        }
-        tasksList=<ul>{listItems}</ul>
-    }
+        )
+    })
+
+    const tasksList: Array<JSX.Element> | JSX.Element = tasks.length
+        ? <ul>{listItem}</ul>
+        : <span>Your Tasks is Empty</span>
 
 
     return (
