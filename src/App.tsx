@@ -3,7 +3,7 @@ import './App.css';
 import {TaskType, TodoList} from './TodoList';
 
 
-type FilterValueType = 'all' | 'active' | 'completed'
+export type FilterValueType = 'all' | 'active' | 'completed'
 
 function App() {
 
@@ -50,6 +50,7 @@ function App() {
                 title={todoListTitle}
                 tasks={filteredTaskForRender}
                 removeTask={removeTask}
+                changeFilter={changeFilter}
             />
         </div>
     );
