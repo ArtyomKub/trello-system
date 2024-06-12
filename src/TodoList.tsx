@@ -68,15 +68,6 @@ export const TodoList: React.FC<TodoListPropsType> = ({title, tasks, removeTask,
                 <button>+</button>
             </div>
             {tasksList}
-            {/*<ul>*/}
-            {/*    {tasks.map((task: TaskType) => (*/}
-            {/*        <li key={task.id}>*/}
-            {/*            <input type="checkbox" checked={task.isDone}/>*/}
-            {/*            <span>{task.title}</span>*/}
-            {/*            <button>x</button>*/}
-            {/*        </li>*/}
-            {/*    ))}*/}
-            {/*</ul>*/}
             <div>
                 <button onClick={()=>onClickFilterHandler('all')}>All</button>
                 <button onClick={()=>onClickFilterHandler('active')}>Active</button>
