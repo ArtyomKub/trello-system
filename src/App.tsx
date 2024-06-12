@@ -7,10 +7,10 @@ function App() {
 
     const todoListTitle = 'What to learn'
     const tasks: Array<TaskType> = [
-        // {id: 1, isDone: true, title: 'HTML&CSS'},
-        // {id: 2, isDone: false, title: 'JS'},
-        // {id: 3, isDone: true, title: 'REACT'},
-        // {id: 4, isDone: false, title: 'CSS'},
+        {id: 1, isDone: true, title: 'HTML&CSS'},
+        {id: 2, isDone: false, title: 'JS'},
+        {id: 3, isDone: true, title: 'REACT'},
+        {id: 4, isDone: false, title: 'CSS'},
     ]
 
 

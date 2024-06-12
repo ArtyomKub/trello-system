@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ReactElement} from 'react';
 
 type TodoListPropsType = {
     title: string;
@@ -28,7 +28,7 @@ export const TodoList: React.FC<TodoListPropsType> = ({title, tasks}) => {
     //     tasksList=<ul>{listItems}</ul>
     // }
 
-    const listItem: Array<JSX.Element> = tasks.map(t => {
+    const listItem: Array<ReactElement> = tasks.map(t => {
         return (
             <li key={t.id}>
                 <input type="checkbox" checked={t.isDone}/>
@@ -38,7 +38,7 @@ export const TodoList: React.FC<TodoListPropsType> = ({title, tasks}) => {
         )
     })
 
-    const tasksList: Array<JSX.Element> | JSX.Element = tasks.length
+    const tasksList: ReactElement = tasks.length
         ? <ul>{listItem}</ul>
         : <span>Your Tasks is Empty</span>
 
